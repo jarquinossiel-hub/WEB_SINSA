@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Sinsa</title>
+  <!-- Vinculación del archivo CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Menú Lateral -->
+  <aside>
+    <h2>Mini Sinsa</h2>
+    <nav>
+      <ul>
+        <li><button class="nav-btn active" onclick="showModule('inicio', this)">📊 Inicio</button></li>
+        <li><button class="nav-btn" onclick="showModule('productos', this)">📦 Productos</button></li>
+        <li><button class="nav-btn" onclick="showModule('ventas', this)">🛒 Ventas</button></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Contenido Principal -->
+  <main>
+    <header>
+      <h1 id="page-title">Panel de Control</h1>
+    </header>
+
+    <!-- Módulo 1: Inicio -->
+    <section id="inicio" class="module active">
+      <div class="cards">
+        <div class="card">
+          <h3>Ventas Totales (Mes)</h3>
+          <p>C$99,750.00</p>
+        </div>
+        <div class="card">
+          <h3>Productos Registrados</h3>
+          <p>50 Articulos</p>
+        </div>
+        <div class="card">
+          <h3>Ordenes Procesadas</h3>
+          <p>499 Venta(s)</p>
+        </div>
+      </div>
+      <div class="content-box">
+        <h3>Últimas Transacciones</h3>
+        <table>
+          <thead>
+            <tr><th>ID Venta</th><th>Cliente</th><th>Total</th><th>Fecha</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>001</td><td>Carlos Mendoza</td><td>C$500.00</td><td>2023-10-01</td></tr>
+            <tr><td>002</td><td>Ana Gutiérrez</td><td>C$350.00</td><td>2023-10-02</td></tr>
+            <tr><td>003</td><td>Roberto Gómez</td><td>C$1,700.00</td><td>2023-10-03</td></tr>
+            <tr><td>004</td><td>Mario Gónzales</td><td>C$10,200.00</td><td>2023-10-04</td></tr>
+            <tr><td>005</td><td>Karla Gómez</td><td>C$25,200.00</td><td>2023-10-05</td></tr>
+            <tr><td>006</td><td>Jose Fletes</td><td>C$1,000.00</td><td>2023-10-06</td></tr>
+            <tr><td>007</td><td>Katerin Puerto</td><td>C$1,200.00</td><td>2023-10-07</td></tr>
+            <tr><td>008</td><td>Manuel Rocha </td><td>C$200.00</td><td>2023-10-08</td></tr>
+            <tr><td>009</td><td>Carlos Mendez </td><td>C$25,350.00</td><td>2023-10-09</td></tr>
+            <tr><td>010</td><td>Jose Jose </td><td>C$15,200.00</td><td>2023-10-10</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Módulo 2: Productos -->
+    <section id="productos" class="module">
+      <div class="content-box">
+        <h3>Agregar Nuevo Producto</h3>
+        <form onsubmit="event.preventDefault(); alert('Producto guardado correctamente');">
+          <div class="form-group">
+            <input type="text" placeholder="Código (ej. 005)" required>
+            <input type="text" placeholder="Nombre del Producto" required>
+            <input type="number" placeholder="Precio ($)" step="0.01" required>
+            <input type="number" placeholder="Stock Inicial" required>
+          </div>
+          <button type="submit" class="btn">Guardar Producto</button>
+        </form>
+      </div>
+
+      <div class="content-box">
+        <h3>Catálogo de Productos</h3>
+        <table>
+          <thead>
+            <tr><th>Código</th><th>Producto</th><th>Precio Unitario</th><th>Stock Disponible</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>001</td><td>Taladro Percutor 1/2"</td><td>$2,500.00</td><td>8 unidades</td></tr>
+            <tr><td>002</td><td>Martillo de Uña 16oz</td><td>$350.00</td><td>15 unidades</td></tr>
+            <tr><td>003</td><td>Juego de Destornilladores (6 pzas)</td><td>$480.00</td><td>22 unidades</td></tr>
+            <tr><td>004</td><td>Sierra Circular 7-1/4"</td><td>$3,100.00</td><td>5 unidades</td></tr>
+            <tr><td>005</td><td>Amoladora Angular 4-1/2" 750W</td><td>C$ 1,850.00</td><td>12 unidades</td></tr>
+            <tr><td>006</td><td>Juego de Llaves Combinadas (12 pzas)</td><td>C$ 950.00</td><td>18 unidades</td></tr>
+            <tr><td>007</td><td>Cinta Métrica 5m / 16ft Impacto</td><td>C$ 180.00</td><td>45 unidades</td></tr>
+            <tr><td>008</td><td>Nivel de Burbuja Profesional 24"</td><td>C$ 420.00</td><td>10 unidades</td></tr>
+            <tr><td>009</td><td>Escalera de Aluminio 6 Peldaños</td><td>C$ 3,200.00</td><td>6 unidades</td></tr>
+            <tr><td>010</td><td>Juego de Brocas para Concreto (5 pzas)</td><td>C$ 280.00</td><td>30 unidades</td></tr>
+            <tr><td>011</td><td>Alicate de Presión 10" Mordaza Curva</td><td>C$ 350.00</td><td>25 unidades</td></tr>
+            <tr><td>012</td><td>Cepillo Eléctrico para Madera 600W</td><td>C$ 2,950.00</td><td>4 unidades</td></tr>
+            <tr><td>013</td><td>Lijadora Orbital 1/4 Hoja 200W</td><td>C$ 1,650.00</td><td>9 unidades</td></tr>
+            <tr><td>014</td><td>Pistola de Calor 1800W con Accesorios</td><td>C$ 1,400.00</td><td>7 unidades</td></tr>
+            <tr><td>015</td><td>Caja de Herramientas Plástica 19"</td><td>C$ 680.00</td><td>14 unidades</td></tr>
+            <tr><td>016</td><td>Extensión Eléctrica Uso Rudo 10m</td><td>C$ 520.00</td><td>20 unidades</td></tr>
+            <tr><td>017</td><td>Multímetro Digital Profesional</td><td>C$ 890.00</td><td>11 unidades</td></tr>
+            <tr><td>018</td><td>Juego de Dados y Chicharra 1/2" (24 pzas)</td><td>C$ 2,450.00</td><td>8 unidades</td></tr>
+            <tr><td>019</td><td>Compresor de Aire 24 Litros 2HP</td><td>C$ 6,800.00</td><td>3 unidades</td></tr>
+            <tr><td>020</td><td>Soldadora Inverter 160A 110V/220V</td><td>C$ 5,500.00</td><td>5 unidades</td></tr>
+            <tr><td>021</td><td>Careta Electrónica para Soldar Fotosensible</td><td>C$ 1,250.00</td><td>15 unidades</td></tr>
+            <tr><td>022</td><td>Careta de Protección Facial Transparente</td><td>C$ 240.00</td><td>40 unidades</td></tr>
+            <tr><td>023</td><td>Guantes de Carnaza para Soldador</td><td>C$ 190.00</td><td>50 unidades</td></tr>
+            <tr><td>024</td><td>Disco de Corte para Metal 4-1/2" (Caja 10 pzas)</td><td>C$ 350.00</td><td>35 unidades</td></tr>
+            <tr><td>025</td><td>Disco de Diamante para Cerámica 4-1/2"</td><td>C$ 290.00</td><td>28 unidades</td></tr>
+            <tr><td>026</td><td>Cortadora de Cerámica Manual 60cm</td><td>C$ 2,100.00</td><td>6 unidades</td></tr>
+            <tr><td>027</td><td>Maza de Acero 4 lbs con Mango de Fibra</td><td>C$ 480.00</td><td>12 unidades</td></tr>
+            <tr><td>028</td><td>Cincel Plano para Concreto 10"</td><td>C$ 160.00</td><td>22 unidades</td></tr>
+            <tr><td>029</td><td>Espátula de Acero Inoxidable 4"</td><td>C$ 95.00</td><td>30 unidades</td></tr>
+            <tr><td>030</td><td>Rodillo para Pintura 9" Antigoteo</td><td>C$ 140.00</td><td>25 unidades</td></tr>
+            <tr><td>031</td><td>Brocha para Pintura Cerdas Mixtas 3"</td><td>C$ 85.00</td><td>40 unidades</td></tr>
+            <tr><td>032</td><td>Silicona Transparente Multiuso 280ml</td><td>C$ 175.00</td><td>60 unidades</td></tr>
+            <tr><td>033</td><td>Pistola para Silicona Reforzada</td><td>C$ 130.00</td><td>20 unidades</td></tr>
+            <tr><td>034</td><td>Cinta Teflón 3/4" x 10m (Pack 5 pzas)</td><td>C$ 110.00</td><td>45 unidades</td></tr>
+            <tr><td>035</td><td>Llave para Tubo Stillson 14"</td><td>C$ 620.00</td><td>10 unidades</td></tr>
+            <tr><td>036</td><td>Llave Ajustable (Perico) 10"</td><td>C$ 380.00</td><td>16 unidades</td></tr>
+            <tr><td>037</td><td>Pinza de Punta Fina 6" Aislada</td><td>C$ 210.00</td><td>18 unidades</td></tr>
+            <tr><td>038</td><td>Cortador de Cables / Pelacables 8"</td><td>C$ 290.00</td><td>14 unidades</td></tr>
+            <tr><td>039</td><td>Cautín Eléctrico tipo Lápiz 60W</td><td>C$ 220.00</td><td>15 unidades</td></tr>
+            <tr><td>040</td><td>Lámpara LED Portátil Recargable 10W</td><td>C$ 450.00</td><td>22 unidades</td></tr>
+            <tr><td>041</td><td>Manguera de Jardín Reforzada 1/2" (15m)</td><td>C$ 780.00</td><td>13 unidades</td></tr>
+            <tr><td>042</td><td>Pistola de Riego Plástica 8 Funciones</td><td>C$ 165.00</td><td>25 unidades</td></tr>
+            <tr><td>043</td><td>Carretilla de Mano 5.5 ft³ Llama Neumática</td><td>C$ 2,650.00</td><td>7 unidades</td></tr>
+            <tr><td>044</td><td>Pala Redonda con Mango de Madera</td><td>C$ 390.00</td><td>19 unidades</td></tr>
+            <tr><td>045</td><td>Rastrillo de Jardín 14 Dientes</td><td>C$ 310.00</td><td>11 unidades</td></tr>
+            <tr><td>046</td><td>Serrucho de Mano para Madera 18"</td><td>C$ 340.00</td><td>17 unidades</td></tr>
+            <tr><td>047</td><td>Arco de Segueta Regulable 12"</td><td>C$ 260.00</td><td>21 unidades</td></tr>
+            <tr><td>048</td><td>Juego de Limas para Metal (3 pzas)</td><td>C$ 430.00</td><td>9 unidades</td></tr>
+            <tr><td>049</td><td>Tornillo de Banco 4" de Hierro Fundido</td><td>C$ 2,800.00</td><td>4 unidades</td></tr>
+            <tr><td>050</td><td>Prensa Tipo C de 4"</td><td>C$ 270.00</td><td>15 unidades</td></tr>
+            <tr><td>051</td><td>Generador Eléctrico a Gasolina 2500W</td><td>C$ 14,500.00</td><td>2 unidades</td></tr>
+            <tr><td>052</td><td>Fumigadora Manual de Mochila 16L</td><td>C$ 1,350.00</td><td>8 unidades</td></tr>
+            <tr><td>053</td><td>Desmalezadora / Motoguadaña a Gasolina 43cc</td><td>C$ 6,200.00</td><td>5 unidades</td></tr>
+            <tr><td>054</td><td>Motosierra a Gasolina 18" 45cc</td><td>C$ 7,100.00</td><td>3 unidades</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+   <!-- Módulo 3: Ventas -->
+<section id="ventas" class="module">
+  <div class="content-box">
+    <h3>Registrar Nueva Venta</h3>
+    <form onsubmit="event.preventDefault(); alert('Venta procesada con éxito');">
+      <div class="form-group">
+        <input type="text" placeholder="Nombre del Cliente" required>
+        
+        <select required>
+          <option value="">Seleccione Producto...</option>
+          <option value="001">001 - Taladro Percutor 1/2" - C$ 2,500.00</option>
+          <option value="002">002 - Martillo de Uña 16oz - C$ 350.00</option>
+          <option value="003">003 - Juego de Destornilladores (6 pzas) - C$ 480.00</option>
+          <option value="004">004 - Sierra Circular 7-1/4" - C$ 3,100.00</option>
+          <option value="005">005 - Amoladora Angular 4-1/2" 750W - C$ 1,850.00</option>
+          <option value="006">006 - Juego de Llaves Combinadas (12 pzas) - C$ 950.00</option>
+          <option value="007">007 - Cinta Métrica 5m / 16ft Impacto - C$ 180.00</option>
+          <option value="008">008 - Nivel de Burbuja Profesional 24" - C$ 420.00</option>
+          <option value="009">009 - Escalera de Aluminio 6 Peldaños - C$ 3,200.00</option>
+          <option value="010">010 - Juego de Brocas para Concreto (5 pzas) - C$ 280.00</option>
+          <option value="011">011 - Alicate de Presión 10" Mordaza Curva - C$ 350.00</option>
+          <option value="012">012 - Cepillo Eléctrico para Madera 600W - C$ 2,950.00</option>
+          <option value="013">013 - Lijadora Orbital 1/4 Hoja 200W - C$ 1,650.00</option>
+          <option value="014">014 - Pistola de Calor 1800W con Accesorios - C$ 1,400.00</option>
+          <option value="015">015 - Caja de Herramientas Plástica 19" - C$ 680.00</option>
+          <option value="016">016 - Extensión Eléctrica Uso Rudo 10m - C$ 520.00</option>
+          <option value="017">017 - Multímetro Digital Profesional - C$ 890.00</option>
+          <option value="018">018 - Juego de Dados y Chicharra 1/2" (24 pzas) - C$ 2,450.00</option>
+          <option value="019">019 - Compresor de Aire 24 Litros 2HP - C$ 6,800.00</option>
+          <option value="020">020 - Soldadora Inverter 160A 110V/220V - C$ 5,500.00</option>
+          <option value="021">021 - Careta Electrónica para Soldar Fotosensible - C$ 1,250.00</option>
+          <option value="022">022 - Careta de Protección Facial Transparente - C$ 240.00</option>
+          <option value="023">023 - Guantes de Carnaza para Soldador - C$ 190.00</option>
+          <option value="024">024 - Disco de Corte para Metal 4-1/2" (Caja 10 pzas) - C$ 350.00</option>
+          <option value="025">025 - Disco de Diamante para Cerámica 4-1/2" - C$ 290.00</option>
+          <option value="026">026 - Cortadora de Cerámica Manual 60cm - C$ 2,100.00</option>
+          <option value="027">027 - Maza de Acero 4 lbs con Mango de Fibra - C$ 480.00</option>
+          <option value="028">028 - Cincel Plano para Concreto 10" - C$ 160.00</option>
+          <option value="029">029 - Espátula de Acero Inoxidable 4" - C$ 95.00</option>
+          <option value="030">030 - Rodillo para Pintura 9" Antigoteo - C$ 140.00</option>
+          <option value="031">031 - Brocha para Pintura Cerdas Mixtas 3" - C$ 85.00</option>
+          <option value="032">032 - Silicona Transparente Multiuso 280ml - C$ 175.00</option>
+          <option value="033">033 - Pistola para Silicona Reforzada - C$ 130.00</option>
+          <option value="034">034 - Cinta Teflón 3/4" x 10m (Pack 5 pzas) - C$ 110.00</option>
+          <option value="035">035 - Llave para Tubo Stillson 14" - C$ 620.00</option>
+          <option value="036">036 - Llave Ajustable (Perico) 10" - C$ 380.00</option>
+          <option value="037">037 - Pinza de Punta Fina 6" Aislada - C$ 210.00</option>
+          <option value="038">038 - Cortador de Cables / Pelacables 8" - C$ 290.00</option>
+          <option value="039">039 - Cautín Eléctrico tipo Lápiz 60W - C$ 220.00</option>
+          <option value="040">040 - Lámpara LED Portátil Recargable 10W - C$ 450.00</option>
+          <option value="041">041 - Manguera de Jardín Reforzada 1/2" (15m) - C$ 780.00</option>
+          <option value="042">042 - Pistola de Riego Plástica 8 Funciones - C$ 165.00</option>
+          <option value="043">043 - Carretilla de Mano 5.5 ft³ Llama Neumática - C$ 2,650.00</option>
+          <option value="044">044 - Pala Redonda con Mango de Madera - C$ 390.00</option>
+          <option value="045">045 - Rastrillo de Jardín 14 Dientes - C$ 310.00</option>
+          <option value="046">046 - Serrucho de Mano para Madera 18" - C$ 340.00</option>
+          <option value="047">047 - Arco de Segueta Regulable 12" - C$ 260.00</option>
+          <option value="048">048 - Juego de Limas para Metal (3 pzas) - C$ 430.00</option>
+          <option value="049">049 - Tornillo de Banco 4" de Hierro Fundido - C$ 2,800.00</option>
+          <option value="050">050 - Prensa Tipo C de 4" - C$ 270.00</option>
+          <option value="051">051 - Generador Eléctrico a Gasolina 2500W - C$ 14,500.00</option>
+          <option value="052">052 - Fumigadora Manual de Mochila 16L - C$ 1,350.00</option>
+          <option value="053">053 - Desmalezadora / Motoguadaña a Gasolina 43cc - C$ 6,200.00</option>
+          <option value="054">054 - Motosierra a Gasolina 18" 45cc - C$ 7,100.00</option>
+        </select>
+        
+        <input type="number" placeholder="Cantidad" min="1" value="1" required>
+      </div>
+      <button type="submit" class="btn">Procesar Venta</button>
+    </form>
+  </div>
+</section>
+  </main>
+
+  <!-- Vinculación del archivo JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
