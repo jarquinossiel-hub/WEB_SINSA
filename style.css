@@ -5,6 +5,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* --- ESTILOS BASE (ESCRITORIO / LAPTOP) --- */
 body {
   display: flex;
   height: 100vh;
@@ -113,6 +114,7 @@ header {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   margin-bottom: 25px;
+  overflow-x: auto; /* Evita que las tablas rompan la pantalla en móviles */
 }
 
 .content-box h3 {
@@ -165,4 +167,63 @@ th {
 
 .btn:hover {
   background-color: #1d4ed8;
+}
+
+/* ==========================================
+   REGLAS ADAPTABLES (MÓVILES Y TABLETAS)
+   ========================================== */
+@media (max-width: 768px) {
+  /* 1. Cambia la estructura general a vertical */
+  body {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* 2. El menú lateral pasa a ser una barra superior */
+  aside {
+    width: 100%;
+    padding: 15px;
+  }
+
+  aside h2 {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  /* Los botones del menú se acomodan de forma horizontal con desplazamiento */
+  nav ul {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  nav li {
+    margin-bottom: 0;
+    flex: 1;
+  }
+
+  nav button {
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* 3. Ajusta el espaciado del contenido principal */
+  main {
+    padding: 15px;
+  }
+
+  /* 4. Apila las tarjetas verticalmente */
+  .cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* 5. Asegura que los botones y los campos ocupen todo el ancho disponible */
+  .form-group input,
+  .form-group select,
+  .btn {
+    width: 100%;
+  }
 }
